@@ -1,0 +1,363 @@
+/* Resumen */
+
+.hero {
+  position: relative;
+  isolation: isolate;
+  min-height: 15.5rem;
+  overflow: hidden;
+  border-radius: var(--radius-xl);
+  background: linear-gradient(105deg, var(--hero), var(--hero-edge));
+  color: var(--surface);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  padding: var(--space-8);
+  max-width: 68%;
+}
+
+.hero-location {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--hero-text);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  margin-bottom: var(--space-3);
+}
+
+.hero-content h2 {
+  font-size: var(--text-display);
+  font-weight: 730;
+  line-height: 1.05;
+}
+
+.hero-content p {
+  margin-block: var(--space-3) var(--space-5);
+  color: var(--hero-text);
+}
+
+.stat-card {
+  display: grid;
+  justify-items: start;
+  gap: var(--space-1);
+  transition: border-color var(--transition);
+}
+
+.stat-card:hover {
+  border-color: var(--accent-light);
+}
+
+.stat-label {
+  margin-top: var(--space-2);
+  font-size: var(--text-sm);
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.stat-card strong {
+  font-size: var(--text-2xl);
+  line-height: 1.18;
+  font-weight: 740;
+  letter-spacing: -0.06em;
+}
+
+.stat-card small {
+  color: var(--muted);
+  font-size: var(--text-xs);
+}
+
+/* Recinto, canchas y torneos */
+
+.venue-intro,
+.court-card-heading {
+  display: flex;
+  gap: var(--space-4);
+}
+
+.venue-intro {
+  align-items: flex-start;
+}
+
+.venue-intro h2 {
+  font-size: var(--text-xl);
+  margin-bottom: var(--space-2);
+}
+
+.venue-intro p {
+  color: var(--muted);
+}
+
+.venue-address {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--muted);
+  font-size: var(--text-sm);
+  margin-top: var(--space-3);
+}
+
+.subgroup + .subgroup {
+  margin-top: var(--space-5);
+}
+
+.subgroup h3 {
+  margin-bottom: var(--space-2);
+  font-size: var(--text-sm);
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 13rem), 1fr));
+  gap: var(--space-4);
+}
+
+.gallery > div {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius);
+}
+
+.gallery img {
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  background: var(--subtle);
+}
+
+.gallery button {
+  position: absolute;
+  top: var(--space-2);
+  right: var(--space-2);
+}
+
+.court-list {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-4);
+}
+
+.court-card-heading {
+  align-items: center;
+  margin-bottom: var(--space-4);
+}
+
+.court-card-heading h2 {
+  margin-bottom: var(--space-2);
+}
+
+.tournament-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.schedule-list li {
+  padding-block: var(--space-3);
+  border-bottom: var(--border);
+  font-size: var(--text-sm);
+}
+
+.schedule-list li:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.schedule-list .chips {
+  margin-top: var(--space-2);
+}
+
+/* Agenda */
+
+.toolbar {
+  padding: var(--space-4);
+  background: var(--surface);
+  border: var(--border);
+  border-radius: var(--radius-lg);
+}
+
+.toolbar .form-field {
+  max-width: 22rem;
+}
+
+.date-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-bottom: var(--space-4);
+}
+
+.filter-chip {
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--rounded);
+  border: var(--border);
+  background: var(--surface);
+  color: var(--muted);
+  font-size: var(--text-sm);
+}
+
+.filter-chip[aria-pressed='true'] {
+  color: var(--accent-hover);
+  border-color: var(--accent-light);
+  background: var(--accent-soft);
+  font-weight: 650;
+}
+
+.agenda-list strong {
+  font-variant-numeric: tabular-nums;
+  font-size: var(--text-base);
+}
+
+.agenda-list small {
+  text-transform: capitalize;
+}
+
+.manual-players form {
+  margin-top: var(--space-4);
+}
+
+/* Resultados de Americano */
+
+.match-form {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  border-top: var(--border);
+  padding: var(--space-3) 0;
+}
+
+.match-form strong {
+  font-size: var(--text-sm);
+}
+
+.match-score {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.match-score input {
+  max-width: 4rem;
+}
+
+/* Acceso */
+
+.login {
+  min-height: 100dvh;
+  display: grid;
+  grid-template-columns: minmax(23rem, 1fr) 1fr;
+  background: var(--surface);
+}
+
+.login-main {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  align-items: start;
+  padding: clamp(1.5rem, 5vw, 4rem);
+}
+
+.login-content {
+  width: min(100%, 23rem);
+  place-self: center;
+  padding-block: var(--space-8);
+}
+
+.login-content h1 {
+  font-size: var(--text-2xl);
+  margin-top: var(--space-4);
+}
+
+.login-content p {
+  margin: var(--space-2) 0 var(--space-6);
+  color: var(--muted);
+}
+
+.login-content .form-stack > .button {
+  width: 100%;
+}
+
+.password-field {
+  position: relative;
+}
+
+.password-field input[type] {
+  padding-inline-end: var(--space-12);
+}
+
+.password-field .icon-button {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.login-art {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  align-items: end;
+  background: linear-gradient(135deg, var(--hero), var(--hero-edge));
+  color: var(--surface);
+  overflow: hidden;
+  padding: var(--space-12);
+}
+
+.login-art .court-art {
+  width: 100%;
+  height: 70%;
+  bottom: 18%;
+}
+
+.login-art .court-outer {
+  inset: 25% -5% auto auto;
+}
+
+.login-art > div:last-child {
+  z-index: 1;
+}
+
+.login-art p {
+  font-size: var(--text-display);
+  font-weight: 700;
+  letter-spacing: -0.05em;
+  line-height: 1.1;
+  max-width: 12ch;
+}
+
+@media (max-width: 50rem) {
+  .hero-content {
+    max-width: 78%;
+  }
+  .hero .court-art {
+    opacity: 0.75;
+  }
+  .login {
+    grid-template-columns: 1fr;
+  }
+  .login-art {
+    display: none;
+  }
+}
+
+@media (max-width: 35rem) {
+  .hero-content {
+    padding: var(--space-5);
+    max-width: 100%;
+  }
+  .hero-content p {
+    max-width: 24ch;
+  }
+  .hero .court-art {
+    opacity: 0.47;
+    width: 52%;
+  }
+  .hero {
+    min-height: 0;
+  }
+  .stat-card {
+    padding: var(--space-3);
+  }
+  .match-form {
+    flex-wrap: wrap;
+  }
+}

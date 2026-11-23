@@ -1,0 +1,179 @@
+/* Variables de diseño */
+
+:root {
+  color-scheme: light;
+  --font:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --bg: #f5f6fa;
+  --surface: #ffffff;
+  --subtle: #f7f8fc;
+  --ink: #192033;
+  --muted: #596479;
+  --line: #e4e8f0;
+  --control-line: #cdd4e2;
+  --nav: #15192a;
+  --nav-ink: #f4f4ff;
+  --nav-muted: #a8afc3;
+  --nav-active: #2c304a;
+  --nav-line: #33394e;
+  --accent: #5144cc;
+  --accent-hover: #4335b6;
+  --accent-soft: #eeecff;
+  --accent-light: #c9c3ff;
+  --success: #146648;
+  --success-soft: #e8f6ef;
+  --danger: #9c3047;
+  --danger-soft: #fff0f3;
+  --hero: #28215e;
+  --hero-edge: #433494;
+  --hero-text: #e0dcff;
+  --court: #a89bff;
+  --ball: #d9f58d;
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-7: 1.75rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --radius-sm: 0.5rem;
+  --radius: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.25rem;
+  --rounded: 999px;
+  --text-xs: 0.8125rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.375rem;
+  --text-2xl: clamp(1.85rem, 2.8vw, 2.35rem);
+  --text-display: clamp(2rem, 4.5vw, 3rem);
+  --shadow: 0 1px 3px #171d3210;
+  --focus: 0 0 0 3px #5144cc38;
+  --control-height: 2.75rem;
+  --rail-width: 14.5rem;
+  --bar-height: 4.5rem;
+  --content-max: 84rem;
+  --transition: 150ms ease;
+  --border: 1px solid var(--line);
+  --page-padding: clamp(var(--space-4), 3vw, var(--space-10));
+}
+
+/* Estilos base y utilidades */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 18rem;
+  background: var(--bg);
+  color: var(--ink);
+  font: var(--text-base)/1.5 var(--font);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+strong {
+  overflow-wrap: anywhere;
+}
+
+h1,
+h2 {
+  letter-spacing: -0.035em;
+  line-height: 1.15;
+}
+
+h3 {
+  font-size: var(--text-base);
+  line-height: 1.35;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+svg {
+  flex-shrink: 0;
+  stroke-width: 1.8;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+::selection {
+  color: var(--accent-hover);
+  background: var(--accent-soft);
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.sr-only,
+.skip-link:not(:focus) {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.skip-link:focus {
+  position: fixed;
+  z-index: 5;
+  top: var(--space-3);
+  left: var(--space-3);
+  padding: var(--space-3);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
